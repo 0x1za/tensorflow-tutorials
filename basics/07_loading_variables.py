@@ -5,7 +5,7 @@ spikes = tf.Variable([False] * 8, name="spikes")
 saver = tf.train.Saver()
 
 try:
-    saver.restore(sess, 'spikes.ckpt.index')
+    saver.restore(sess, 'my-model')
     print (spikes.eval())
 except:
     print "File not found"
