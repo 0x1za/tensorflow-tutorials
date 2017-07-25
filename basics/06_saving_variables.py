@@ -14,6 +14,6 @@ for i in range(1, len(raw_data)):
         updater = tf.assign(spikes, spikes_val)
         updater.eval()
 
-save_path = saver.save(sess, "spikes.ckpt")
+save_path = saver.save(sess, 'my-model')
 print "Spikes data saved in: %s" % save_path
 sess.close()
