@@ -141,3 +141,4 @@ fabric.properties
 
 .gitignore
 .idea/
+basics/logs/
