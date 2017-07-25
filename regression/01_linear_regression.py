@@ -42,3 +42,5 @@ for epoch in range(training_epochs):
     for (x, y) in zip(x_train, y_train):
         sess.run(training_op, feed_dict={X:y, Y:y})
 
+sess.close()
+
