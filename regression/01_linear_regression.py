@@ -22,25 +22,9 @@ Y = tf.placeholder("float")
 def model(X, w):
     return tf.mul(X, w)
 
-# Define the weights
-w = tf.Variable(0.0, name="weights")
+# Create weights
+w = tf.Variable(0.0, name='weights')
 
-# Cost function with mean squared error
-y_model = model(X, w)
-cost = tf.reduce_mean(tf.square(Y-y_model))
+# Compute loss
 
-# Compute the loss and optimize the parameters
-training_op = tf.train.GradientDescentOptimizer(lr).minimize(cost)
-
-# Initialize all variables
-sess = tf.Session()
-init = tf.global_variables_initializer()
-sess.run(init)
-
-# Interate over data
-for epoch in range(training_epochs):
-    for (x, y) in zip(x_train, y_train):
-        sess.run(training_op, feed_dict={X:y, Y:y})
-
-sess.close()
 
